@@ -626,6 +626,8 @@ var listPoiClosed = function(mapLabelId) {
 // adds a POI to the HTML list ???
 var addElementToPoiList = function(mapLabelId, mapLabelName, mapLabelInfo, timestamp) {
 
+	//alert('addElementToPoiList');
+
     if(Object.keys(ambiarc.poiList).length > 0){
         $('.init-poi-text').hide();
         $('.sorting-section').show();
@@ -703,8 +705,10 @@ var addElementToPoiList = function(mapLabelId, mapLabelName, mapLabelInfo, times
 };
 
 
-// refreshing poi list items
+/// refreshing poi list items
 var updatePoiList = function(){
+
+	//alert('updatePoiList');
 
     $('#listPoiContainer').html('');
 
@@ -712,6 +716,8 @@ var updatePoiList = function(){
     	//console.log(poiData);
         addElementToPoiList(id, poiData.label, poiData);
     });
+
+    postJsonToEndpoint();
 
     if(Object.keys(ambiarc.poiList).length > 0){
         $('.init-poi-text').hide();
@@ -722,6 +728,45 @@ var updatePoiList = function(){
         $('.sorting-section').hide();
     }
 };
+
+
+/// ian's hacks
+var postJsonToEndpoint = function() {
+
+	console.log(ambiarc.poiList[currentLabelId]);
+
+	// 	$.post("http://facilities/facilities/push",
+	// 	{
+	// 		message: 'yay',
+	// 		id: ambiarc.poiList[currentLabelId].mapLabelId,
+	// 		data: ambiarc.poiList[currentLabelId]
+	// 	},
+	// 	function(data, status){
+	// 		console.log(data);
+	// 		console.log(status);
+	// 	});
+
+	var obj = {};
+	obj.id = ambiarc.poiList[currentLabelId].mapLabelId;
+	obj.data = ambiarc.poiList[currentLabelId];
+
+	$.ajax({
+		type: "POST",
+		dataType: 'json',
+		url: "http://facilities/facilities/push",
+		crossDomain : true,
+		data: JSON.stringify(obj)
+	})
+    .done(function( data ) {
+        console.log("done");
+    })
+    .fail( function(xhr, textStatus, errorThrown) {
+        console.log(xhr.responseText);
+        console.log(textStatus);
+    });
+
+};
+
 
 // sorting poi list by name, date or location
 var sortPoiList = function(array){
