@@ -1,0 +1,581 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "OPEN OFC",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5892431",
+                    "39.0442795"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "ACTIVITY RES CTR",
+                "bldgAbbr": "ARC",
+                "newRoomNo": "101-",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0002",
+                "label": "ENAMELING RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 223
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5818696",
+                    "39.0469123"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "CHEMISTRY",
+                "bldgAbbr": "CHEM",
+                "newRoomNo": "202A",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "MEN'S RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 275
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5819839",
+                    "39.0470512"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "DEKALB HALL",
+                "bldgAbbr": "DEK",
+                "newRoomNo": "T-100",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "SEMINAR RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 1251
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5895257",
+                    "39.0442449"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "EAST HALL",
+                "bldgAbbr": "EAST",
+                "newRoomNo": "105-",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "WOMEN'S RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 1374
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5820342",
+                    "39.0473324"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "ENGINEERING",
+                "bldgAbbr": "ENGR",
+                "newRoomNo": "T-100",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0003",
+                "label": "SEMINAR RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 1537
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5871727",
+                    "39.0461172"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "FLUSHING",
+                "bldgAbbr": "FLSH",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "CLASSRM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 1656
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5855842",
+                    "39.0433369"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "HIGGINS",
+                "bldgAbbr": "HH",
+                "newRoomNo": "114-",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "CLASSROOM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 1547
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5866249",
+                    "39.0442152"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "INFORMATION SCIENCE CENTER",
+                "bldgAbbr": "ISC",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "CLASSROOM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 2251
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5878543",
+                    "39.0462201"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "LIBRARY",
+                "bldgAbbr": "LIB",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "MCC SIGN-IN/PRINTING",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 2327
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5888051",
+                    "39.0492861"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "MACHINERY",
+                "bldgAbbr": "MACH",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "RECEPTION",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 2408
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5897456",
+                    "39.0423213"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "MAIN BUILDING",
+                "bldgAbbr": "MAIN",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "ELEV. 1",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 2587
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5862453",
+                    "39.0450980"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "MYRTLE HALL",
+                "bldgAbbr": "MH",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "OPEN OFC",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 2805
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5819657",
+                    "39.0491111"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "NORTH HALL",
+                "bldgAbbr": "NH",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "RESOURCE RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 398
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5882998",
+                    "39.0468438"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "PRATT STUDIOS",
+                "bldgAbbr": "PS",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "SEMINAR RM",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 3203
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5814341",
+                    "39.0494044"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "SOUTH HALL",
+                "bldgAbbr": "SH",
+                "newRoomNo": "102-",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "SECURITY",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 559
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5846601",
+                    "39.0421392"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "STEUBEN",
+                "bldgAbbr": "STEU",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0001",
+                "label": "ELEV 1",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 2942
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5874392",
+                    "39.0431662"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "PMC",
+                "bldgAbbr": "W14",
+                "newRoomNo": "",
+                "count": 18
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "buildingId": "0001",
+                "floorId": "0003",
+                "label": "PROJECT RM (MA & MFA)",
+                "fontSize": "32",
+                "category": "Label",
+                "location": "Default",
+                "partialPath": "Information",
+                "showOnCreation": true,
+                "type": "IconWithText",
+                "showToolTip": false,
+                "tooltipTitle": "",
+                "tooltipBody": "",
+                "mapLabelId": 3179
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "-94.5854619",
+                    "39.0499194"
+                ]
+            },
+            "user_properties": {
+                "accessible": "N",
+                "bldgName": "18TH ST.",
+                "bldgAbbr": "W18",
+                "newRoomNo": "",
+                "count": 18
+            }
+        }
+    ]
+}
