@@ -733,36 +733,35 @@ var updatePoiList = function(){
 /// ian's hacks
 var postJsonToEndpoint = function() {
 
-	console.log(ambiarc.poiList[currentLabelId]);
+	//console.log(ambiarc.poiList[currentLabelId]);
 
-	// 	$.post("http://facilities/facilities/push",
-	// 	{
-	// 		message: 'yay',
-	// 		id: ambiarc.poiList[currentLabelId].mapLabelId,
-	// 		data: ambiarc.poiList[currentLabelId]
-	// 	},
-	// 	function(data, status){
-	// 		console.log(data);
-	// 		console.log(status);
-	// 	});
-
-	var obj = {};
-	obj.id = ambiarc.poiList[currentLabelId].mapLabelId;
-	obj.data = ambiarc.poiList[currentLabelId];
+	// 	var obj = {};
+	// 	obj.id = ambiarc.poiList[currentLabelId].mapLabelId;
+	// 	obj.data = ambiarc.poiList[currentLabelId];
+	// 	obj.message = 'hello from front end';
 
 	$.ajax({
 		type: "POST",
-		dataType: 'json',
-		url: "http://facilities/facilities/push",
+		//dataType: 'json',
+		//url: "http://facilities/facilities/push",
+		url: "https://map.pratt.edu/facilities/web/facilities/push",
 		crossDomain : true,
-		data: JSON.stringify(obj)
+		//data: JSON.stringify(obj),
+		data: {
+			id: ambiarc.poiList[currentLabelId].mapLabelId,
+			info: ambiarc.poiList[currentLabelId],
+			message: 'hello from front end',
+		}
 	})
-    .done(function( data ) {
-        console.log("done");
+    .done(function( ret ) {
+    	console.log('post begin');
+        console.log(ret);
+        console.log('post end');
     })
     .fail( function(xhr, textStatus, errorThrown) {
         console.log(xhr.responseText);
         console.log(textStatus);
+        console.log(errorThrown);
     });
 
 };
@@ -1632,7 +1631,8 @@ var pullDataFromEndpoint = function () {
 
     var hash = Math.random().toString(36).substr(2, 5);
 
-	$.getJSON("http://facilities/facilities/fetch?hash="+hash, function(data) {
+	//$.getJSON("http://facilities/facilities/fetch?hash="+hash, function(data) {
+	$.getJSON("https://map.pratt.edu/facilities/web/facilities/fetch?hash="+hash, function(data) {
 		try {
 			fillGeoData(data);
 		} catch(e) {
