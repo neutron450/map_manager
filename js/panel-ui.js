@@ -729,44 +729,6 @@ var updatePoiList = function(){
     }
 };
 
-
-/// ian's hacks
-var postJsonToEndpoint = function() {
-
-	//console.log(ambiarc.poiList[currentLabelId]);
-
-	// 	var obj = {};
-	// 	obj.id = ambiarc.poiList[currentLabelId].mapLabelId;
-	// 	obj.data = ambiarc.poiList[currentLabelId];
-	// 	obj.message = 'hello from front end';
-
-	$.ajax({
-		type: "POST",
-		//dataType: 'json',
-		//url: "http://facilities/facilities/push",
-		url: "https://map.pratt.edu/facilities/web/facilities/push",
-		crossDomain : true,
-		//data: JSON.stringify(obj),
-		data: {
-			id: ambiarc.poiList[currentLabelId].mapLabelId,
-			info: ambiarc.poiList[currentLabelId],
-			message: 'hello from front end',
-		}
-	})
-    .done(function( ret ) {
-    	console.log('post begin');
-        console.log(ret);
-        console.log('post end');
-    })
-    .fail( function(xhr, textStatus, errorThrown) {
-        console.log(xhr.responseText);
-        console.log(textStatus);
-        console.log(errorThrown);
-    });
-
-};
-
-
 // sorting poi list by name, date or location
 var sortPoiList = function(array){
 
@@ -1624,24 +1586,82 @@ var importFileHandler = function(evt){
     }
 };
 
-
 /// ian's hacks
-/// pull in data from the api endpoint
 var pullDataFromEndpoint = function () {
+
+	//alert(document.token);
 
     var hash = Math.random().toString(36).substr(2, 5);
 
-	//$.getJSON("http://facilities/facilities/fetch?hash="+hash, function(data) {
-	$.getJSON("https://map.pratt.edu/facilities/web/facilities/fetch?hash="+hash, function(data) {
-		try {
-			fillGeoData(data);
-		} catch(e) {
-			console.log(e);
-			alert('fill-geo failed');
-			return;
+	// 	$.getJSON("http://facilities/facilities/fetch?hash="+hash, function(data) {
+	// 	//$.getJSON("https://map.pratt.edu/facilities/web/facilities/fetch?hash="+hash, function(data) {
+	// 		try {
+	// 			console.log(data);
+	// 			//fillGeoData(data);
+	// 		} catch(e) {
+	// 			console.log(e);
+	// 			alert('fill-geo failed');
+	// 			return;
+	// 		}
+	// 	});
+
+	$.ajax({
+		url: "http://facilities/facilities/fetch?hash="+hash,
+		data: {
+			token: document.token
+		},
+		type: "GET",
+		//beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');},
+		success: function(ret) {
+			try {
+				console.log(ret);
+				//fillGeoData(ret);
+			} catch(e) {
+				console.log(e);
+				alert('fill-geo failed');
+				return;
+			}
 		}
 	});
+
 }
+
+/// ian's hacks
+var postJsonToEndpoint = function() {
+
+	//console.log(ambiarc.poiList[currentLabelId]);
+
+	// 	var obj = {};
+	// 	obj.id = ambiarc.poiList[currentLabelId].mapLabelId;
+	// 	obj.data = ambiarc.poiList[currentLabelId];
+	// 	obj.message = 'hello from front end';
+
+	$.ajax({
+		type: "POST",
+		//dataType: 'json',
+		//url: "http://facilities/facilities/push",
+		url: "https://map.pratt.edu/facilities/web/facilities/push",
+		crossDomain : true,
+		//data: JSON.stringify(obj),
+		data: {
+			id: ambiarc.poiList[currentLabelId].mapLabelId,
+			info: ambiarc.poiList[currentLabelId],
+			message: 'hello from front end',
+			token: document.token
+		}
+	})
+    .done(function( ret ) {
+    	console.log('post begin');
+        console.log(ret);
+        console.log('post end');
+    })
+    .fail( function(xhr, textStatus, errorThrown) {
+        console.log(xhr.responseText);
+        console.log(textStatus);
+        console.log(errorThrown);
+    });
+
+};
 
 
 var fillGeoData = function(properties){
