@@ -15,15 +15,12 @@ class DbTools {
 
 	public function __construct() {
 
-		// Set DSN
 		$dsn = 'mysql:host=' . $this->dbhost . ';dbname=' . $this->dbname;
-		// Set options
 		$options = array(
 			PDO::ATTR_PERSISTENT => true,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		);
 
-		// Create a new PDO instanace
 		try {
 			$this->dbh = new PDO($dsn, $this->dbuser, $this->dbpass, $options);
 		} catch(PDOException $e){

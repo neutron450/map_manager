@@ -1606,7 +1606,8 @@ var pullDataFromEndpoint = function () {
 	// 	});
 
 	$.ajax({
-		url: "http://facilities/facilities/fetch?hash="+hash,
+		//url: "http://facilities/facilities/fetch?hash="+hash,
+		url: "https://map.pratt.edu/facilities/web/facilities/fetch",
 		data: {
 			token: document.token
 		},
