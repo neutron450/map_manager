@@ -1607,7 +1607,7 @@ var pullDataFromEndpoint = function () {
 
 	$.ajax({
 		//url: "http://facilities/facilities/fetch?hash="+hash,
-		url: "https://map.pratt.edu/facilities/web/facilities/fetch",
+		url: "https://map.pratt.edu/facilities/web/facilities/get",
 		data: {
 			token: document.token
 		},
@@ -1616,7 +1616,7 @@ var pullDataFromEndpoint = function () {
 		success: function(ret) {
 			try {
 				console.log(ret);
-				//fillGeoData(ret);
+				fillGeoData(ret);
 			} catch(e) {
 				console.log(e);
 				alert('fill-geo failed');
@@ -1641,7 +1641,7 @@ var postJsonToEndpoint = function() {
 		type: "POST",
 		//dataType: 'json',
 		//url: "http://facilities/facilities/push",
-		url: "https://map.pratt.edu/facilities/web/facilities/push",
+		url: "https://map.pratt.edu/facilities/web/facilities/put",
 		crossDomain : true,
 		//data: JSON.stringify(obj),
 		data: {
