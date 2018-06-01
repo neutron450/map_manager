@@ -479,9 +479,10 @@ var onAmbiarcLoaded = function() {
     $('#controls-section').fadeIn();
     $('.panel-section').removeClass('invisible');
 
-//     $('document').contextmenu(function(e){
-//         e.preventDefault();
-//     });
+	/// context menu disabled here
+    $('document').contextmenu(function(e){
+        e.preventDefault();
+    });
 
 	console.log('onAmbiarcLoaded');
     pullDataFromEndpoint();
@@ -490,6 +491,11 @@ var onAmbiarcLoaded = function() {
 
 // creates the right-click menu over the map
 var onRightMouseDown = function(event) {
+
+	// 	alert('onRightMouseDown');
+	// 	console.log(event);
+	// 	console.log(isFloorSelectorEnabled);
+	// 	console.log(currentLabelId);
 
     if(isFloorSelectorEnabled){
         return;
@@ -1609,7 +1615,9 @@ var pullDataFromEndpoint = function () {
 		//url: "http://facilities/facilities/fetch?hash="+hash,
 		url: "https://map.pratt.edu/facilities/web/facilities/get",
 		data: {
-			token: document.token
+			token: document.token,
+			webapp: 'map_manager',
+			limit: '20'
 		},
 		type: "GET",
 		//beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');},
@@ -1703,7 +1711,12 @@ var downloadObjectAsJson = function (exportObj, exportName){
 
 var repositionLabel = function(){
 
+	//alert('repositionLabel');
+    //console.log(ambiarc.coordType.gps);
+
     ambiarc.getMapPositionAtCursor(ambiarc.coordType.gps, (latlon) => {
+
+    	console.log(latlon);
 
         var latitude = parseFloat(latlon.lat);
         var longitude = parseFloat(latlon.lon);

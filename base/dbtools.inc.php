@@ -35,7 +35,7 @@ class DbTools {
 			$token = bin2hex(random_bytes(15));
 			$sql = "INSERT INTO tokens (token) VALUES ('$token')";
 			$this->dbh->exec($sql);
-			echo 'setting token : '.$_SESSION['token'] = $token;
+			//echo 'setting token : '.$_SESSION['token'] = $token;
 		} catch(PDOException $e) {
 			echo $sql . "<br>" . $e->getMessage();
 		}
@@ -51,9 +51,9 @@ class DbTools {
 			$stmt->execute();
 			$rows = $stmt->fetch();
 
-			echo '<pre>';
-			print_r($rows);
-			echo '</pre>';
+			// 	echo '<pre>';
+			// 	print_r($rows);
+			// 	echo '</pre>';
 
 			if ($rows['token']) {
 				return true;
