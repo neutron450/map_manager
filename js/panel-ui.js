@@ -485,7 +485,7 @@ var onAmbiarcLoaded = function() {
     });
 
 	console.log('onAmbiarcLoaded');
-    pullDataFromEndpoint();
+    pullDataFromApi();
 
 };
 
@@ -714,7 +714,7 @@ var addElementToPoiList = function(mapLabelId, mapLabelName, mapLabelInfo, times
 /// refreshing poi list items
 var updatePoiList = function(){
 
-	//alert('updatePoiList');
+	console.log('updatePoiList');
 
     $('#listPoiContainer').html('');
 
@@ -723,7 +723,7 @@ var updatePoiList = function(){
         addElementToPoiList(id, poiData.label, poiData);
     });
 
-    postJsonToEndpoint();
+    postJsonToApi();
 
     if(Object.keys(ambiarc.poiList).length > 0){
         $('.init-poi-text').hide();
@@ -1062,6 +1062,8 @@ var addNewPair = function(key, value){
 
 var updatePairKey =  function(e){
 
+	console.log('updatePairKey');
+
     var pairItem = $(this).closest('.pair-key-row');
     var key = $(pairItem).find('.poi-new-key').val();
     var value = $(pairItem).find('.poi-new-value').val();
@@ -1102,6 +1104,10 @@ var updatePairValue =  function(e){
     }
 
     ambiarc.poiList[currentLabelId][key] = value;
+
+	/// post user-props
+	postJsonToApi();
+
 };
 
 
@@ -1593,7 +1599,7 @@ var importFileHandler = function(evt){
 };
 
 /// ian's hacks
-var pullDataFromEndpoint = function () {
+var pullDataFromApi = function () {
 
 	//alert(document.token);
 
@@ -1635,8 +1641,9 @@ var pullDataFromEndpoint = function () {
 
 }
 
+
 /// ian's hacks
-var postJsonToEndpoint = function() {
+var postJsonToApi = function() {
 
 	//console.log(ambiarc.poiList[currentLabelId]);
 
