@@ -1623,7 +1623,8 @@ var pullDataFromApi = function () {
 		data: {
 			token: document.token,
 			webapp: 'map_manager',
-			limit: '20'
+			limit: '9999',
+			building: $.urlParam('building')
 		},
 		type: "GET",
 		//beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');},

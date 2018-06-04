@@ -78,6 +78,29 @@
             </div>
         </div>
 
+        <div class="separate-block row buttons_row">
+		  <select class="menu-buildings">
+			<option value="">:: Select Building ::</option>
+			<option value="ARC">ARC</option>
+			<option value="CHEM">CHEM</option>
+			<option value="DEK">DEK</option>
+			<option value="PS">PS</option>
+			<option value="STEU">STEU</option>
+			<option value="EAST">EAST</option>
+			<option value="ENGR">ENGR</option>
+			<option value="FLSH">FLSH</option>
+			<option value="ISC">ISC</option>
+			<option value="HH">HH</option>
+			<option value="LIB">LIB</option>
+			<option value="MACH">MACH</option>
+			<option value="MAIN">MAIN</option>
+			<option value="MH">MH</option>
+			<option value="NH">NH</option>
+			<option value="W14">W14</option>
+			<option value="W18">W18</option>
+			<option value="SH">SH</option>
+		  </select>
+		</div>
 
         <!-- main panel -->
         <div id="main-panel" class="separate-block row poi-list-panel" style="pointer-events: all">
@@ -655,6 +678,24 @@
         ambiarcIframe.src = mapUrl;
 
     $('#pairKeyValueTemplate').after(ambiarcIframe);
+
+	$.urlParam = function(name){
+		var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (results==null) {
+		   return null;
+		} else {
+		   return decodeURI(results[1]) || 0;
+		}
+	}
+
+    $(document).on("change", "select.menu-buildings", function(e){
+
+		var url = window.location.href;
+		url = url.split('?')[0];
+		url += '?building='+this.value
+		window.location.href = url;
+
+	});
 
 </script>
 
