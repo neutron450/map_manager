@@ -80,25 +80,25 @@
 
         <div class="separate-block row buttons_row">
 		  <select class="menu-buildings">
-			<option value="">:: Select Building ::</option>
-			<option value="ARC">ARC</option>
-			<option value="CHEM">CHEM</option>
-			<option value="DEK">DEK</option>
-			<option value="PS">PS</option>
-			<option value="STEU">STEU</option>
-			<option value="EAST">EAST</option>
-			<option value="ENGR">ENGR</option>
-			<option value="FLSH">FLSH</option>
-			<option value="ISC">ISC</option>
-			<option value="HH">HH</option>
-			<option value="LIB">LIB</option>
-			<option value="MACH">MACH</option>
-			<option value="MAIN">MAIN</option>
-			<option value="MH">MH</option>
-			<option value="NH">NH</option>
-			<option value="W14">W14</option>
-			<option value="W18">W18</option>
-			<option value="SH">SH</option>
+			<option class="bldg-opts" value="">:: Select Building ::</option>
+			<option class="bldg-opts" value="ARC">ARC</option>
+			<option class="bldg-opts" value="CHEM">CHEM</option>
+			<option class="bldg-opts" value="DEK">DEK</option>
+			<option class="bldg-opts" value="PS">PS</option>
+			<option class="bldg-opts" value="STEU">STEU</option>
+			<option class="bldg-opts" value="EAST">EAST</option>
+			<option class="bldg-opts" value="ENGR">ENGR</option>
+			<option class="bldg-opts" value="FLSH">FLSH</option>
+			<option class="bldg-opts" value="ISC">ISC</option>
+			<option class="bldg-opts" value="HH">HH</option>
+			<option class="bldg-opts" value="LIB">LIB</option>
+			<option class="bldg-opts" value="MACH">MACH</option>
+			<option class="bldg-opts" value="MAIN">MAIN</option>
+			<option class="bldg-opts" value="MH">MH</option>
+			<option class="bldg-opts" value="NH">NH</option>
+			<option class="bldg-opts" value="W14">W14</option>
+			<option class="bldg-opts" value="W18">W18</option>
+			<option class="bldg-opts" value="SH">SH</option>
 		  </select>
 		</div>
 
@@ -689,12 +689,18 @@
 	}
 
     $(document).on("change", "select.menu-buildings", function(e){
-
 		var url = window.location.href;
 		url = url.split('?')[0];
 		url += '?building='+this.value
 		window.location.href = url;
+	});
 
+	$(document).ready(function() {
+		$('.bldg-opts').attr('selected',false);
+		var building = $.urlParam('building');
+		if (building > '1') {
+			$('.menu-buildings option[value='+building+']').attr('selected',true);
+		}
 	});
 
 </script>
