@@ -1617,6 +1617,13 @@ var pullDataFromApi = function () {
 	// 		}
 	// 	});
 
+	if ( $.urlParam('building') < '1') {
+		$("select.menu-buildings").focus();
+		$("select.menu-buildings").css({'background-color':'orange'});
+		alert('Please select a building.');
+		return true;
+	}
+
 	$.ajax({
 		//url: "http://facilities/facilities/fetch?hash="+hash,
 		url: "https://map.pratt.edu/facilities/web/facilities/get",

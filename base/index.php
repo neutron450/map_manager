@@ -663,10 +663,9 @@
 
     var getMapName = function(name){
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        if (results==null){
+        if (results==null) {
             return null;
-        }
-        else{
+        } else {
             return decodeURI(results[1]) || 0;
         }
     };
