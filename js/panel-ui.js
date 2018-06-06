@@ -1629,7 +1629,7 @@ var pullDataFromApi = function () {
 		url: "https://map.pratt.edu/facilities/web/facilities/get",
 		data: {
 			token: document.token,
-			webapp: 'map_manager',
+			webapp: 'manage',
 			limit: '9999',
 			building: $.urlParam('building')
 		},
