@@ -81,24 +81,24 @@
         <div class="separate-block row buttons_row">
 		  <select class="menu-buildings">
 			<option class="bldg-opts" value="">:: Select Building ::</option>
-			<option class="bldg-opts" value="ARC">ARC</option>
-			<option class="bldg-opts" value="CHEM">CHEM</option>
-			<option class="bldg-opts" value="DEK">DEK</option>
-			<option class="bldg-opts" value="PS">PS</option>
-			<option class="bldg-opts" value="STEU">STEU</option>
-			<option class="bldg-opts" value="EAST">EAST</option>
-			<option class="bldg-opts" value="ENGR">ENGR</option>
-			<option class="bldg-opts" value="FLSH">FLSH</option>
-			<option class="bldg-opts" value="ISC">ISC</option>
-			<option class="bldg-opts" value="HH">HH</option>
-			<option class="bldg-opts" value="LIB">LIB</option>
-			<option class="bldg-opts" value="MACH">MACH</option>
-			<option class="bldg-opts" value="MAIN">MAIN</option>
-			<option class="bldg-opts" value="MH">MH</option>
-			<option class="bldg-opts" value="NH">NH</option>
-			<option class="bldg-opts" value="W14">W14</option>
-			<option class="bldg-opts" value="W18">W18</option>
-			<option class="bldg-opts" value="SH">SH</option>
+			<option class="bldg-opts" value="ARC">ARC :: ACTIVITY RES CTR</option>
+			<option class="bldg-opts" value="CHEM">CHEM :: CHEMISTRY</option>
+			<option class="bldg-opts" value="DEK">DEK :: DEKALB HALL</option>
+			<option class="bldg-opts" value="PS">PS :: PRATT STUDIOS</option>
+			<option class="bldg-opts" value="STEU">STEU :: STEUBEN</option>
+			<option class="bldg-opts" value="EAST">EAST :: EAST HALL</option>
+			<option class="bldg-opts" value="ENGR">ENGR :: ENGINEERING</option>
+			<option class="bldg-opts" value="FLSH">FLSH :: FLUSHING</option>
+			<option class="bldg-opts" value="ISC">ISC :: INFORMATION SCIENCE CENTER</option>
+			<option class="bldg-opts" value="HH">HH :: HIGGINS</option>
+			<option class="bldg-opts" value="LIB">LIB :: LIBRARY</option>
+			<option class="bldg-opts" value="MACH">MACH :: MACHINERY</option>
+			<option class="bldg-opts" value="MAIN">MAIN :: MAIN BUILDING</option>
+			<option class="bldg-opts" value="MH">MH :: MYRTLE HALL</option>
+			<option class="bldg-opts" value="NH">NH :: NORTH HALL</option>
+			<option class="bldg-opts" value="W14">W14 :: PRATT MANHATTAN CENTER</option>
+			<option class="bldg-opts" value="W18">W18 :: 18TH ST.</option>
+			<option class="bldg-opts" value="SH">SH :: SOUTH HALL</option>
 		  </select>
 		</div>
 
