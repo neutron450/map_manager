@@ -46,12 +46,25 @@
     <script src="../js/BootstrapMenu.min.js"></script>
     <script src="../js/panel-ui.js?time=<?php echo time() ?>"></script>
     <script src="../js/move-controls-ui.js "></script>
+
+    <style>
+
+    	#show_geoloc {
+    		position: absolute;
+    		top: 0px;
+    		right: 0px;
+    	}
+
+    </style>
+
 </head>
 
 <body style="pointer-events: none">
 
 <div id="main_container" class="container-fluid" style="z-index:100;">
     <div class="panel-section invisible">
+
+    	<div id="show_geoloc">geo location</div>
 
         <div class="separate-block row buttons_row">
             <div id="import-btn" class="col-sm imp-exp-btn">
@@ -700,7 +713,27 @@
 		if (building > '1') {
 			$('.menu-buildings option[value='+building+']').attr('selected',true);
 		}
+
+		setInterval(getLocation, 1000);
+
 	});
+
+
+	var x = document.getElementById("show_geoloc");
+	function getLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		}
+	}
+	function showPosition(position) {
+		x.innerHTML = "Latitude: " + position.coords.latitude +
+		"<br>Longitude: " + position.coords.longitude;
+	}
+
+	//console.log('geo');
+
 
 </script>
 
