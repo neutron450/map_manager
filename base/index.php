@@ -1,9 +1,22 @@
 <?php
+
+	date_default_timezone_set('America/New_York');
+
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	ini_set("log_errors", 1);
+	//ini_set("error_log", "/mnt/isilon/hosted_sites/home/map/web/map_manager/error.log");
+	ini_set("error_log", "/Users/iancampbell/Sites/map_manager/error.log");
+	error_log( " - - - - - - - - - - - - - - - - " );
+
+	//echo 'map manager';
+	//die();
+
 	session_start();
 	//echo __DIR__;
 	include_once('dbtools.inc.php');
 	$obj = new DbTools;
-	if (!$_SESSION['token']) {
+	if (!@$_SESSION['token']) {
 		$obj->createToken();
 	} else {
 		if ($obj->checkToken($_SESSION['token'])) {
@@ -321,6 +334,9 @@
                         <span style="float: left;/* vertical-align: middle; */line-height: 2.4rem;">Undo</span>
                     </label>
                 </div>
+
+                <button class="header-button pull-geo btn btn-primary" style="height:30px;margin-left:10px;">geo</button>
+
                 <div class="btn col-sm header-button pull-right saved-btn invisible">
                     <span>Saved</span>
                 </div>
@@ -715,6 +731,28 @@
 		}
 
 		setInterval(getLocation, 1000);
+
+	});
+
+	$(document).on('click', '.pull-geo', function(e){
+
+		var geo = document.getElementById("show_geoloc").innerHTML;
+		geo = geo.replace('<br>',':');
+		var split = geo.split(':');
+		console.log(split);
+
+		var lat = split[1].trim();
+		var lon = split[3].trim();
+
+		//$('#poi-label-latitude').focus();
+		$('#poi-label-latitude').val(lat);
+		updatePoiDetails('latitude', lat);
+		//$('#poi-label-latitude').blur();
+
+		//$('#poi-label-longitude').focus();
+		$('#poi-label-longitude').val(lon);
+		updatePoiDetails('longitude', lon);
+		//$('#poi-label-longitude').blur();
 
 	});
 

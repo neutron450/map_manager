@@ -1660,6 +1660,8 @@ var postJsonToApi = function() {
 	// 	obj.data = ambiarc.poiList[currentLabelId];
 	// 	obj.message = 'hello from front end';
 
+	console.log(ambiarc.poiList[currentLabelId]);
+
 	$.ajax({
 		type: "POST",
 		//dataType: 'json',
@@ -1710,7 +1712,15 @@ var fillGeoData = function(properties){
 
 // function for setting number of decimal places (longitude and latitude)
 var toFixed = function(num, fixed) {
-    var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+
+
+    console.log('toFixed');
+    //console.log(re);
+    console.log(num);
+    console.log(fixed);
+
+        var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+
     return num.toString().match(re)[0];
 }
 
@@ -1726,8 +1736,8 @@ var downloadObjectAsJson = function (exportObj, exportName){
 
 var repositionLabel = function(){
 
-	//alert('repositionLabel');
-    //console.log(ambiarc.coordType.gps);
+	alert('repositionLabel');
+    console.log(ambiarc.coordType.gps);
 
     ambiarc.getMapPositionAtCursor(ambiarc.coordType.gps, (latlon) => {
 
