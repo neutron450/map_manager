@@ -33,9 +33,11 @@ class DbTools {
 
 		try {
 			$token = bin2hex(random_bytes(15));
+			//@$token = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
 			$sql = "INSERT INTO tokens (token) VALUES ('$token')";
 			$this->dbh->exec($sql);
 			//echo 'setting token : '.$_SESSION['token'] = $token;
+			$_SESSION['token'] = $token;
 		} catch(PDOException $e) {
 			echo $sql . "<br>" . $e->getMessage();
 		}

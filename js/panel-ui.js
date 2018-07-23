@@ -485,7 +485,7 @@ var onAmbiarcLoaded = function() {
     });
 
 	console.log('onAmbiarcLoaded');
-    pullDataFromApi();
+    ///pullDataFromApi();
 
 };
 
@@ -1603,6 +1603,9 @@ var pullDataFromApi = function () {
 
 	//alert(document.token);
 
+	var hei = $('div.panel-body').height();
+	$('ul#listPoiContainer').css({'max-height': hei+'px'});
+
     var hash = Math.random().toString(36).substr(2, 5);
 
 	// 	$.getJSON("http://facilities/facilities/fetch?hash="+hash, function(data) {
@@ -1617,12 +1620,14 @@ var pullDataFromApi = function () {
 	// 		}
 	// 	});
 
-	if ( $.urlParam('building') < '1') {
-		$("select.menu-buildings").focus();
-		$("select.menu-buildings").css({'background-color':'orange'});
-		alert('Please select a building.');
-		return true;
-	}
+	// 	if ( $.urlParam('building') < '1') {
+	// 		$("select.menu-buildings").focus();
+	// 		$("select.menu-buildings").css({'background-color':'orange'});
+	// 		alert('Please select a building.');
+	// 		return true;
+	// 	}
+
+	// alert(building);
 
 	$.ajax({
 		//url: "http://facilities/facilities/fetch?hash="+hash,
@@ -1631,7 +1636,8 @@ var pullDataFromApi = function () {
 			token: document.token,
 			webapp: 'manage',
 			limit: '9999',
-			building: $.urlParam('building')
+			//building: $.urlParam('building')
+			building: building
 		},
 		type: "GET",
 		//beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');},
@@ -1659,6 +1665,10 @@ var postJsonToApi = function() {
 	// 	obj.id = ambiarc.poiList[currentLabelId].mapLabelId;
 	// 	obj.data = ambiarc.poiList[currentLabelId];
 	// 	obj.message = 'hello from front end';
+
+	if (typeof ambiarc.poiList[currentLabelId] == 'undefined') {
+		return false;
+	}
 
 	console.log(ambiarc.poiList[currentLabelId]);
 
@@ -1712,15 +1722,7 @@ var fillGeoData = function(properties){
 
 // function for setting number of decimal places (longitude and latitude)
 var toFixed = function(num, fixed) {
-
-
-    console.log('toFixed');
-    //console.log(re);
-    console.log(num);
-    console.log(fixed);
-
-        var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
-
+    var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
     return num.toString().match(re)[0];
 }
 
@@ -1736,8 +1738,8 @@ var downloadObjectAsJson = function (exportObj, exportName){
 
 var repositionLabel = function(){
 
-	alert('repositionLabel');
-    console.log(ambiarc.coordType.gps);
+	//alert('repositionLabel');
+    //console.log(ambiarc.coordType.gps);
 
     ambiarc.getMapPositionAtCursor(ambiarc.coordType.gps, (latlon) => {
 
@@ -1757,23 +1759,26 @@ var repositionLabel = function(){
 
 var hideInactivePoints = function(immediate){
 
-if(!immediate)var immediate = false;
-    $.each(ambiarc.poiList, function(id, obj){
+	if(!immediate) {
+		var immediate = false;
+	}
+
+	$.each(ambiarc.poiList, function(id, obj){
         if(id != currentLabelId) {
             ambiarc.hideMapLabel(id, immediate);
-        }
-        else {
+        } else {
             if(obj.floorId == currentFloorId){
                 ambiarc.showMapLabel(id, immediate)
             }
         }
-    });
+	});
+
     if(ambiarc.poiList[currentLabelId].floorId !== currentFloorId){
         ambiarc.hideMapLabel(currentLabelId);
-    }
-    else {
+    } else {
         ambiarc.showMapLabel(currentLabelId);
     }
+
 };
 
 var showInactivePoints = function(){

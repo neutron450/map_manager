@@ -159,6 +159,8 @@ input[type='checkbox'] {
 
 #listPoiContainer {
     list-style: none;
+    overflow-y: scroll;
+    max-height: 400px;
 }
 
 .poi-list-item {

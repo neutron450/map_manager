@@ -26,3 +26,11 @@
 [26-Jun-2018 10:08:08 America/New_York]  - - - - - - - - - - - - - - - - 
 [26-Jun-2018 10:09:58 America/New_York]  - - - - - - - - - - - - - - - - 
 [26-Jun-2018 10:11:10 America/New_York]  - - - - - - - - - - - - - - - - 
+[02-Jul-2018 08:15:03 America/New_York]  - - - - - - - - - - - - - - - - 
+[02-Jul-2018 08:15:03 America/New_York] PHP Notice:  Undefined index: token in /Users/iancampbell/Sites/map_manager/base/index.php on line 56
+[12-Jul-2018 10:42:22 America/New_York]  - - - - - - - - - - - - - - - - 
+[12-Jul-2018 10:42:22 America/New_York] PHP Warning:  PDO::__construct(): MySQL server has gone away in /Users/iancampbell/Sites/map_manager/base/dbtools.inc.php on line 25
+[12-Jul-2018 10:42:38 America/New_York]  - - - - - - - - - - - - - - - - 
+[18-Jul-2018 13:57:19 America/New_York]  - - - - - - - - - - - - - - - - 
+[18-Jul-2018 13:57:41 America/New_York]  - - - - - - - - - - - - - - - - 
+[23-Jul-2018 11:30:11 America/New_York]  - - - - - - - - - - - - - - - - 

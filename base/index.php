@@ -74,35 +74,12 @@
 
 <body style="pointer-events: none">
 
+<div id="show_geoloc">geo location</div>
+
+
 <div id="main_container" class="container-fluid" style="z-index:100;">
+
     <div class="panel-section invisible">
-
-    	<div id="show_geoloc">geo location</div>
-
-        <div class="separate-block row buttons_row">
-            <div id="import-btn" class="col-sm imp-exp-btn">
-                Import
-            </div>
-            <input type="file" id="import-file" class="import-poi-file">
-
-            <div id="export-btn" class="col-sm imp-exp-btn">
-                Export
-            </div>
-
-            <div id="new-scene-btn" class="col-sm imp-exp-btn" data-toggle="modal" data-target="#exampleModal">
-                New Scene
-            </div>
-        </div>
-
-        <div class="separate-block row buttons_row">
-            <div class="col-sm imp-exp-btn map_view">
-                Map view
-            </div>
-
-            <div class="col-sm imp-exp-btn select_wrapper" style="pointer-events: all">
-                <select id="bldg-floor-select"></select>
-            </div>
-        </div>
 
         <div class="separate-block row buttons_row">
 		  <select class="menu-buildings">
@@ -127,6 +104,34 @@
 			<option class="bldg-opts" value="SH">SH :: SOUTH HALL</option>
 		  </select>
 		</div>
+
+
+        <!--<div class="separate-block row buttons_row">
+            <div id="import-btn" class="col-sm imp-exp-btn">
+                Import
+            </div>
+            <input type="file" id="import-file" class="import-poi-file">
+
+            <div id="export-btn" class="col-sm imp-exp-btn">
+                Export
+            </div>
+
+            <div id="new-scene-btn" class="col-sm imp-exp-btn" data-toggle="modal" data-target="#exampleModal">
+                New Scene
+            </div>
+        </div>-->
+
+        <div class="separate-block row buttons_row">
+            <div class="col-sm imp-exp-btn map_view">
+                Map view
+            </div>
+
+            <div class="col-sm imp-exp-btn select_wrapper" style="pointer-events: all">
+                <select id="bldg-floor-select"></select>
+            </div>
+        </div>
+
+
 
         <!-- main panel -->
         <div id="main-panel" class="separate-block row poi-list-panel" style="pointer-events: all">
@@ -335,6 +340,7 @@
                     </label>
                 </div>
 
+                <!--<button class="pull-geo">geo</button>-->
                 <button class="header-button pull-geo btn btn-primary" style="height:30px;margin-left:10px;">geo</button>
 
                 <div class="btn col-sm header-button pull-right saved-btn invisible">
@@ -717,10 +723,16 @@
 	}
 
     $(document).on("change", "select.menu-buildings", function(e){
-		var url = window.location.href;
-		url = url.split('?')[0];
-		url += '?building='+this.value
-		window.location.href = url;
+
+		// 	var url = window.location.href;
+		// 	url = url.split('?')[0];
+		// 	url += '?building='+this.value
+		// 	window.location.href = url;
+
+		destroyAllLabels();
+		window.building = this.value;
+		pullDataFromApi();
+
 	});
 
 	$(document).ready(function() {
